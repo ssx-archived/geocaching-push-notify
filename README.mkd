@@ -1,0 +1,27 @@
+GeoCaching.com Push Notifications
+============================
+
+This package will parse [Geocaching.com](http://geocaching.com) notification emails and turn them into a push notification using the excellent prowlapp.com iOS device app. The setup and configuration isn't simple and debugging it can be a problem depending upon your setup.
+
+There are a few things that you will need to implement this for your own use, they are:
+
+* A prowlapp.com account and working iOS with the app installed on it
+* An API key provided at prowlapp.com
+* A geocaching.com premium account
+* Access to your mail server configuration or the ability to use .forward files
+* Pear package mimeDecode installed
+
+Installation
+--------------
+You will need to run this package on the same machine that processes your email. This is usually a unix based system. It may be possible to configure the scripts to work on alternative operating systems, but that is beyond the scope of this file.
+
+Quick Start:
+
+* Configure a dedicated email address for this package to use
+* Pipe that email address to the full path of parse-email.php
+* Edit the paths in parse-email.php to reflect your environment
+* Set up [email notifications on the geocaching.com website](http://www.geocaching.com/notify/default.aspx) to point towards your new email address
+
+If you've got this far, things should run smoothly. If not, retrace your steps and your configuration.
+
+I'd recommend that you edit the parsing to only include the types of notifications you want to push, as it can run your battery down quite quickly if you live in an active area.
